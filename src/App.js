@@ -1,7 +1,6 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Card from './components/Card';
 
 function App() {
   const [apodData, setApodData] = useState([]);
@@ -18,7 +17,6 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p> */}
-      <Card getCount={getCount} apodData={apodData}/>
     </div>
   );
 }
