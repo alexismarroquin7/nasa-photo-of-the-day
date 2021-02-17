@@ -3,9 +3,11 @@ import React from "react";
 const Content = () => {
     return (
         <div className="Content">
-            Everyday a new picture of the sky is taken.
-            <br />
-            Enter a number of random images to take a look at.
+            <h3>
+                Everyday a new picture of the sky is taken.
+                <br />
+                Enter a number of random images from our library to take a look at.
+            </h3>
         </div>
     );
 }
