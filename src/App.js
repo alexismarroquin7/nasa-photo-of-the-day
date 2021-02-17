@@ -1,32 +1,16 @@
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
 import Card from './components/Card';
-import { BASE_URL, API_KEY } from './constants';
 
 function App() {
   const [apodData, setApodData] = useState([]);
-  const [count, setCount] = useState('');
+  const [count, setCount] = useState(null);
 
-  useEffect(() => {
-    const fetchApod = () => {
-      axios.get(`${BASE_URL}${API_KEY}none`)
-        .then(res => {
-          return setApodData(res.data);
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    }
-    fetchApod();
-  }, []);
 
-  const getCount = event => {
-    const amount = event.target.value;
-    return setCount(amount);
+  const getCount = (input) => {
+    return setCount(input);
   }
-
 
   return (
     <div className="App">
