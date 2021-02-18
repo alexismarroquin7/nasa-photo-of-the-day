@@ -2,16 +2,13 @@ export default {
     secondaryColor: 'crimson',
     background: 'black',
     primaryColor: 'white',
-    Content: {
-        mainFont: '',
+    content: {
+        display: 'flex',
         header: {
-
-        },
-        section: {
-
+            padding:'2%',
         },
         footer: {
-
+            width: '70%',
         }
     }
 }

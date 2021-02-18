@@ -13,12 +13,12 @@ const StyledContent = styled.div`
     }
 
     color:${props => props.theme.primaryColor};
-    display:flex;
+    display:${props => props.theme.content.display};
     flex-flow:row wrap;
 
     header {
-        padding:2%;
-        display:flex;
+        padding:${props => props.theme.content.header.padding};
+        display:${props => props.theme.content.display};
         align-items:center;
         justify-content:center;
         width:50%;
@@ -35,22 +35,24 @@ const StyledContent = styled.div`
             border-radius:10px;
 
             &:hover {
-            border:5px solid white;
+            border:10px solid white;
             }
         }
         
     }
 
     footer {
-        width:70%;
+        width:${props => props.theme.content.footer.width};
         h4 {
             text-indent:4rem;
-            &:hover {
-                background:${props => props.theme.primaryColor};
-                color:${props => props.theme.background};
-                padding:2%;
-                border-radius:10px;
-            }
+            
+        }
+        &:hover {
+            background:${props => props.theme.primaryColor};
+            color:${props => props.theme.background};
+            padding:2%;
+            border-radius:7px;
+            text-align:center;
         }
     }
 `
