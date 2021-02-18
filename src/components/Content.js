@@ -2,6 +2,13 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import {BASE_URL, API_KEY} from "../constants";
 
+// import styled from 'styled-components'
+
+// const StyledTop = styled.h3`
+//             color:${props => props.theme.primaryColor};
+//             background:black;
+//         `
+
 const Content = () => {
     const [apod, setApod] = useState({});
 
@@ -14,9 +21,10 @@ const Content = () => {
     }, []);
 
     const Top = () => {
+
+
         return (
-            <h3>
-                Everyday a new image of the sky is taken.
+            <div>Everyday a new image of the sky is taken.
                 <br />
                 Today's image was taken by 
                 <br />
@@ -24,7 +32,7 @@ const Content = () => {
                     {apod.copyright}
                 </span>
                 !
-            </h3>
+            </div>
         )
     }
 
@@ -34,14 +42,11 @@ const Content = () => {
                 <div className="img-container">
                     <img src={apod.url}/>
                 </div>
-                <p>
-                    {apod.title} || 
-                    <span>
-                        Date: {apod.date}
-                    </span>
-                    <span>
-                        Credit: {apod.copyright}
-                    </span>
+                <p>{apod.title}
+                <br />
+                <span>{apod.date}</span>
+                <br />
+                <span>{apod.copyright}</span>
                 </p>
             </div>
         )
