@@ -3,8 +3,9 @@ export default {
     background: 'black',
     primaryColor: 'white',
     Content: {
+        mainFont: '',
         header: {
-            
+
         },
         section: {
 

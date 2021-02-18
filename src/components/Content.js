@@ -9,6 +9,7 @@ const StyledContent = styled.div`
     /* font-family: 'Roboto', sans-serif; */
     * {
         font-family: 'Roboto', sans-serif;
+        transition: all 0.2s ease-in-out;
     }
 
     color:${props => props.theme.primaryColor};
@@ -32,11 +33,25 @@ const StyledContent = styled.div`
 
         img {
             border-radius:10px;
+
+            &:hover {
+            border:5px solid white;
+            }
         }
+        
     }
 
     footer {
         width:70%;
+        h4 {
+            text-indent:4rem;
+            &:hover {
+                background:${props => props.theme.primaryColor};
+                color:${props => props.theme.background};
+                padding:2%;
+                border-radius:10px;
+            }
+        }
     }
 `
 
