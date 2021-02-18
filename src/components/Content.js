@@ -2,12 +2,25 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import {BASE_URL, API_KEY} from "../constants";
 
-// import styled from 'styled-components'
+import styled from 'styled-components'
 
-// const StyledTop = styled.h3`
-//             color:${props => props.theme.primaryColor};
-//             background:black;
-//         `
+const StyledContent = styled.div`
+    color:${props => props.theme.primaryColor};
+    display:flex;
+    flex-flow:row wrap;
+
+    header {
+        padding:2%;
+        border:1px solid red;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    footer {
+        width:80%;
+    }
+`
 
 const Content = () => {
     const [apod, setApod] = useState({});
@@ -24,21 +37,22 @@ const Content = () => {
 
 
         return (
-            <div>Everyday a new image of the sky is taken.
-                <br />
+            <header>
+                <p>Everyday a new image of the sky is taken.
+        
                 Today's image was taken by 
-                <br />
+            
                 <span>
-                    {apod.copyright}
+                    {` ` + apod.copyright}
                 </span>
-                !
-            </div>
+                !</p>
+            </header>
         )
     }
 
     const Mid = () => {
         return (
-            <div className="Mid">
+            <section className="Mid">
                 <div className="img-container">
                     <img src={apod.url}/>
                 </div>
@@ -48,24 +62,24 @@ const Content = () => {
                 <br />
                 <span>{apod.copyright}</span>
                 </p>
-            </div>
+            </section>
         )
     }
 
     const Lower = () => {
         return (
-            <div className="Lower">
+            <footer className="Lower">
                 <h2>{apod.explanation}</h2>
-            </div>
+            </footer>
         )
     }
 
     return (
-        <div className="Content">
+        <StyledContent>
             <Top />
             <Mid />
             <Lower />
-        </div>
+        </StyledContent>
     );
 }
 

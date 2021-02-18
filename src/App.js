@@ -8,12 +8,18 @@ const StyledApp = styled.div`
   background:${props => props.theme.background};
   color:${props => props.theme.color};
 
+  display:flex;
+  flex-flow:row nowrap;
+  align-items:center;
+
   h1 {
-    color:${props => props.accent ? 'royalblue' : 'white'};
+    color:${props => props.accent ? 'royalblue' : props.theme.color};
+    width:10%;
+    padding:2%;
   }
 `
 
-function App({accent}) {
+function App() {
 
   return (
     <StyledApp accent>
