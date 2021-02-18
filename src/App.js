@@ -1,15 +1,9 @@
 
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
+import Content from "./components/Content"
 
 function App() {
-  const [apodData, setApodData] = useState([]);
-  const [count, setCount] = useState(null);
-
-
-  const getCount = (input) => {
-    return setCount(input);
-  }
 
   return (
     <div className="App">
@@ -17,6 +11,8 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p> */}
+      <h1>N.A.S.A.'s A.P.O.D</h1>
+      <Content />
     </div>
   );
 }
