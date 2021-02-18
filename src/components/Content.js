@@ -17,6 +17,7 @@ const Content = () => {
         return (
             <h3>
                 Everyday a new image of the sky is taken.
+                <br />
                 Today's image was taken by 
                 <br />
                 <span>
@@ -27,9 +28,38 @@ const Content = () => {
         )
     }
 
+    const Mid = () => {
+        return (
+            <div className="Mid">
+                <div className="img-container">
+                    <img src={apod.url}/>
+                </div>
+                <p>
+                    {apod.title} || 
+                    <span>
+                        Date: {apod.date}
+                    </span>
+                    <span>
+                        Credit: {apod.copyright}
+                    </span>
+                </p>
+            </div>
+        )
+    }
+
+    const Lower = () => {
+        return (
+            <div className="Lower">
+                <h2>{apod.explanation}</h2>
+            </div>
+        )
+    }
+
     return (
         <div className="Content">
             <Top />
+            <Mid />
+            <Lower />
         </div>
     );
 }
